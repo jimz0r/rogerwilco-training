@@ -13,3 +13,27 @@ rw_training.unenroll:
   requirements:
     _entity_access: 'node.view'
     node: '\d+'
+
+rw_training.lesson_complete:
+  path: '/lesson/{node}/complete'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\LessonProgressController::complete'
+  requirements:
+    _entity_access: 'node.view'
+    node: '\d+'
+
+rw_training.lesson_uncomplete:
+  path: '/lesson/{node}/uncomplete'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\LessonProgressController::uncomplete'
+  requirements:
+    _entity_access: 'node.view'
+    node: '\d+'
+
+rw_training.course_next_lesson:
+  path: '/course/{node}/continue'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\NextLessonController::go'
+  requirements:
+    _entity_access: 'node.view'
+    node: '\d+'

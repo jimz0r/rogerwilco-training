@@ -1,0 +1,4 @@
+services:
+  rw_training.progress_calculator:
+    class: Drupal\rw_training\Service\ProgressCalculator
+    arguments: ['@entity_type.manager']
