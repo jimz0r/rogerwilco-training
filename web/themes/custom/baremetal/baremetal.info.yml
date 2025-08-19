@@ -1,0 +1,24 @@
+name: baremetal
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - baremetal/base
+  - baremetal/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - baremetal/user
+  core/drupal.dropbutton:
+    - baremetal/dropbutton
+  core/drupal.dialog:
+    - baremetal/dialog
+  file/drupal.file:
+    - baremetal/file
+  core/drupal.progress:
+    - baremetal/progress
+  core/drupal.tablesort:
+    - baremetal/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.2.3'
