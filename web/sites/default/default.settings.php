@@ -2,8 +2,6 @@
 
 // phpcs:ignoreFile
 
-// DDEV-created Drupal 10 settings.php from upstream default.settings.php
-
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -69,10 +67,10 @@
  * during the same request.
  *
  * One example of the simplest connection array is shown below. To use the
- * sample settings, copy and uncomment the code below between the @code and
- * @endcode lines and paste it after the $databases declaration. You will need
- * to replace the database username and password and possibly the host and port
- * with the appropriate credentials for your database system.
+ * sample settings, copy and uncomment the code below and paste it after the
+ * $databases declaration. You will need to replace the database username and
+ * password and possibly the host and port with the appropriate credentials for
+ * your database system.
  *
  * The next section describes how to customize the $databases array for more
  * specific needs.
@@ -146,7 +144,7 @@ $databases = [];
  * in deadlocks, the other two options are 'READ UNCOMMITTED' and 'SERIALIZABLE'.
  * They are available but not supported; use them at your own risk. For more
  * info:
- * https://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html
+ * https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
  *
  * On your settings.php, change the isolation level:
  * @code
@@ -258,7 +256,7 @@ $databases = [];
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-$settings['config_sync_directory'] = '../config/sync';
+# $settings['config_sync_directory'] = '/directory/outside/webroot';
 
 /**
  * Settings:
@@ -314,7 +312,7 @@ $settings['hash_salt'] = '';
 $settings['update_free_access'] = FALSE;
 
 /**
- * Fallback to HTTP for Update Manager and for fetching security advisories.
+ * Fallback to HTTP for Update Status and for fetching security advisories.
  *
  * If your site fails to connect to updates.drupal.org over HTTPS (either when
  * fetching data on available updates, or when fetching the feed of critical
@@ -476,30 +474,6 @@ $settings['update_free_access'] = FALSE;
  * @see https://getcomposer.org/doc/articles/autoloader-optimization.md
  */
 # $settings['class_loader_auto_detect'] = FALSE;
-
-/**
- * Authorized file system operations:
- *
- * The Update Manager module included with Drupal provides a mechanism for
- * site administrators to securely install missing updates for the site
- * directly through the web user interface. On securely-configured servers,
- * the Update manager will require the administrator to provide SSH or FTP
- * credentials before allowing the installation to proceed; this allows the
- * site to update the new files as the user who owns all the Drupal files,
- * instead of as the user the webserver is running as. On servers where the
- * webserver user is itself the owner of the Drupal files, the administrator
- * will not be prompted for SSH or FTP credentials (note that these server
- * setups are common on shared hosting, but are inherently insecure).
- *
- * Some sites might wish to disable the above functionality, and only update
- * the code directly via SSH or FTP themselves. This setting completely
- * disables all functionality related to these authorized file operations.
- *
- * @see https://www.drupal.org/node/244924
- *
- * Remove the leading hash signs to disable.
- */
-# $settings['allow_authorize_operations'] = FALSE;
 
 /**
  * Default mode for directories and files written by Drupal.
@@ -727,15 +701,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 # $settings['container_base_class'] = '\Drupal\Core\DependencyInjection\Container';
 
 /**
- * Override the default yaml parser class.
- *
- * Provide a fully qualified class name here if you would like to provide an
- * alternate implementation YAML parser. The class must implement the
- * \Drupal\Component\Serialization\SerializationInterface interface.
- */
-# $settings['yaml_parser_class'] = NULL;
-
-/**
  * Trusted host configuration.
  *
  * Drupal core can use the Symfony trusted host mechanism to prevent HTTP Host
@@ -810,16 +775,6 @@ $settings['entity_update_batch_size'] = 50;
 $settings['entity_update_backup'] = TRUE;
 
 /**
- * State caching.
- *
- * State caching uses the cache collector pattern to cache all requested keys
- * from the state API in a single cache entry, which can greatly reduce the
- * amount of database queries. However, some sites may use state with a
- * lot of dynamic keys which could result in a very large cache.
- */
-$settings['state_cache'] = TRUE;
-
-/**
  * Node migration type.
  *
  * This is used to force the migration system to use the classic node migrations
@@ -874,11 +829,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # $settings['migrate_source_version'] = '';
 # $settings['migrate_file_public_path'] = '';
 # $settings['migrate_file_private_path'] = '';
-
-// Automatically generated include for settings managed by ddev.
-if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev.php')) {
-  include __DIR__ . '/settings.ddev.php';
-}
 
 /**
  * Load local development override configuration, if available.
