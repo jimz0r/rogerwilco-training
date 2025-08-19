@@ -1,0 +1,22 @@
+uuid: 373048fa-83e9-44a0-a435-97075e7b14b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - baremetal
+_core:
+  default_config_hash: y9X3xgCsO59pQyzNLzY1D3SDJJxCHILLWkpPnmuTJ2E
+id: baremetal_breadcrumbs
+theme: baremetal
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

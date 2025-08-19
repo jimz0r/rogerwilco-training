@@ -12,6 +12,7 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -23,12 +24,15 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  h5p: 0
   help: 0
   history: 0
   image: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  media: 0
+  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -47,10 +51,13 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workflows: 0
   views: 10
   standard: 1000
 theme:
   claro: 0
   gin: 0
   stark: 0
+  stable9: 0
+  baremetal: 0
 profile: standard

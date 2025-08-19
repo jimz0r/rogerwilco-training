@@ -1,0 +1,38 @@
+uuid: 768737cb-44f1-4a20-840f-ddd8fba5ad9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.module.field_course_ref
+    - field.field.node.module.field_order
+    - node.type.module
+  module:
+    - user
+id: node.module.default
+targetEntityType: node
+bundle: module
+mode: default
+content:
+  field_course_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_order:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

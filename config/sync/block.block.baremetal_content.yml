@@ -1,0 +1,22 @@
+uuid: c50ee734-3d26-4932-a06e-00fc8ec1cb92
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - baremetal
+_core:
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: baremetal_content
+theme: baremetal
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

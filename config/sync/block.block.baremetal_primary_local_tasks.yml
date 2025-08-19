@@ -1,0 +1,22 @@
+uuid: 52a1b98e-40bb-4c39-82aa-7214eb5472f0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - baremetal
+_core:
+  default_config_hash: Hh01DLj9k7UnNdPpOQXHZHW7GHf2OPNDQyCJF7_R9ac
+id: baremetal_primary_local_tasks
+theme: baremetal
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

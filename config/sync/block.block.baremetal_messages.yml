@@ -1,0 +1,22 @@
+uuid: 4761dab3-21d3-40bb-9931-1fba80d164e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - baremetal
+_core:
+  default_config_hash: WvPhI8OwllG0gE69-F8qL3ai3nd5SbYD6JpmEuZcyok
+id: baremetal_messages
+theme: baremetal
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

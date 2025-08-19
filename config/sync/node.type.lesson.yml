@@ -1,0 +1,18 @@
+uuid: 7170c85b-5692-42b3-840b-a7b2b575c399
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Lesson
+type: lesson
+description: 'Use to create <em>Lession</em> content.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

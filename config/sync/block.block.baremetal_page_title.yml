@@ -1,0 +1,20 @@
+uuid: 218e47d9-2ac3-471d-895b-782eee3fc516
+langcode: en
+status: true
+dependencies:
+  theme:
+    - baremetal
+_core:
+  default_config_hash: HLQY2xgby8K3vN_98hiOSasOhm9pdCsH234-s0duJ8Q
+id: baremetal_page_title
+theme: baremetal
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

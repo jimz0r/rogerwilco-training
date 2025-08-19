@@ -1,0 +1,22 @@
+uuid: 6a3ff3b1-f9a4-4ecb-9861-c30fa4ffe7d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.course
+  module:
+    - text
+id: node.course.field_summary
+field_name: field_summary
+entity_type: node
+bundle: course
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

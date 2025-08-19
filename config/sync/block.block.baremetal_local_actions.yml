@@ -1,0 +1,20 @@
+uuid: 10a7975c-3753-41c7-81d7-797c60bd46ab
+langcode: en
+status: true
+dependencies:
+  theme:
+    - baremetal
+_core:
+  default_config_hash: OQ9aJ-4qVwK1x00o9EOYK4eFDjQr_HLpbPiJaPSVZiQ
+id: baremetal_local_actions
+theme: baremetal
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

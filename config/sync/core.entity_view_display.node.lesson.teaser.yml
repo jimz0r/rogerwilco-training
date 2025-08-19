@@ -1,0 +1,36 @@
+uuid: 41d4a80c-2606-4f10-83a0-9bf2e9eec69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lesson.body
+    - field.field.node.lesson.field_media_documents_ref
+    - field.field.node.lesson.field_module_ref
+    - field.field.node.lesson.field_order
+    - node.type.lesson
+  module:
+    - text
+    - user
+id: node.lesson.teaser
+targetEntityType: node
+bundle: lesson
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_media_documents_ref: true
+  field_module_ref: true
+  field_order: true
