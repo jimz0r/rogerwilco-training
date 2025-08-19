@@ -1,6 +1,8 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  admin_toolbar: 0
+  admin_toolbar_tools: 0
   announcements_feed: 0
   automated_cron: 0
   big_pipe: 0
@@ -20,10 +22,12 @@ module:
   devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_update: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  gin_toolbar: 0
   h5p: 0
   help: 0
   history: 0
@@ -36,12 +40,12 @@ module:
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
-  navigation: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  rw_training: 0
   search: 0
   shortcut: 0
   system: 0

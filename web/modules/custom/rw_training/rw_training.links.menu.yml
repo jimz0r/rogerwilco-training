@@ -1,0 +1,6 @@
+rw_enrollment.collection:
+  title: 'Enrollments'
+  description: 'Manage course enrollments.'
+  route_name: entity.rw_enrollment.collection
+  parent: system.admin_content
+  weight: 25

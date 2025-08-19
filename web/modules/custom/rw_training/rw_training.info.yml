@@ -1,0 +1,9 @@
+name: 'RW Training'
+type: module
+description: 'Internal training platform: enrollments, progress, and course tooling.'
+core_version_requirement: '^11'
+package: 'RW'
+dependencies:
+  - drupal:node
+  - drupal:user
+  - drupal:views

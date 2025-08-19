@@ -1,0 +1,4 @@
+administer rw training:
+  title: 'Administer RW Training'
+  description: 'Manage enrollments and settings for the training platform.'
+  restrict access: true

@@ -1,0 +1,15 @@
+rw_training.enroll:
+  path: '/course/{node}/enroll'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\EnrollController::enroll'
+  requirements:
+    _entity_access: 'node.view'
+    node: '\d+'
+
+rw_training.unenroll:
+  path: '/course/{node}/unenroll'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\EnrollController::unenroll'
+  requirements:
+    _entity_access: 'node.view'
+    node: '\d+'
