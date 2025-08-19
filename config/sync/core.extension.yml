@@ -8,12 +8,15 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  coffee: 0
   comment: 0
   config: 0
   contact: 0
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
@@ -23,10 +26,13 @@ module:
   help: 0
   history: 0
   image: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
+  navigation: 0
   node: 0
   options: 0
   page_cache: 0
@@ -44,6 +50,7 @@ module:
   views: 10
   standard: 1000
 theme:
-  olivero: 0
   claro: 0
+  gin: 0
+  stark: 0
 profile: standard
