@@ -5,6 +5,7 @@ namespace Drupal\rw_training\Entity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
 use Drupal\user\UserInterface;
 
@@ -44,9 +45,10 @@ use Drupal\user\UserInterface;
  * )
  */
 class Enrollment extends ContentEntityBase {
+  use StringTranslationTrait;
 
   /**
-   * Base fields for the Enrollment entity.
+   * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
     $fields = parent::baseFieldDefinitions($entity_type);
@@ -134,13 +136,32 @@ class Enrollment extends ContentEntityBase {
     return $account ? [['target_id' => $account->id()]] : [];
   }
 
-  // Convenience getters (optional).
+  /** Convenience getter: enrolled User. */
   public function getUser(): ?UserInterface {
     return $this->get('user_id')->entity;
   }
 
+  /** Convenience getter: Course node. */
   public function getCourse(): ?NodeInterface {
     return $this->get('course')->entity;
+  }
+
+  /**
+   * {@inheritdoc}
+   * Provide a non-null label to avoid UI fatals on edit pages.
+   */
+  public function label(): string {
+    $user = $this->get('user_id')->entity;
+    $course = $this->get('course')->entity;
+
+    $user_label = $user ? $user->label() : (string) $this->t('Unknown user');
+    $course_label = $course ? $course->label() : (string) $this->t('Unknown course');
+
+    // Example: "Enrollment: Jane Doe → Site Building 101"
+    return (string) $this->t('Enrollment: @user → @course', [
+      '@user' => $user_label,
+      '@course' => $course_label,
+    ]);
   }
 
 }
