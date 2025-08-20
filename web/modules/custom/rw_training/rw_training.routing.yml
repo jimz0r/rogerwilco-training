@@ -37,3 +37,11 @@ rw_training.course_next_lesson:
   requirements:
     _entity_access: 'node.view'
     node: '\d+'
+
+rw_training.recalc_all:
+  path: '/admin/content/enrollments/recalculate'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\AdminRecalcController::recalc'
+    _title: 'Recalculate enrollment progress'
+  requirements:
+    _permission: 'administer rw training'

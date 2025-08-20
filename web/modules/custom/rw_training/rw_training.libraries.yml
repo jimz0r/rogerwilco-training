@@ -1,0 +1,4 @@
+cards:
+  css:
+    theme:
+      css/rw-training.cards.css: {}

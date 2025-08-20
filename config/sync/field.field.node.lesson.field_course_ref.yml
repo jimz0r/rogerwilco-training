@@ -1,0 +1,24 @@
+uuid: 0af6106d-f737-4b02-a4c7-32cc90f2ae33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_ref
+    - node.type.course
+    - node.type.lesson
+id: node.lesson.field_course_ref
+field_name: field_course_ref
+entity_type: node
+bundle: lesson
+label: Course
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+field_type: entity_reference

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.lesson.body
+    - field.field.node.lesson.field_course_ref
     - field.field.node.lesson.field_media_documents_ref
     - field.field.node.lesson.field_module_ref
     - field.field.node.lesson.field_order
@@ -31,6 +32,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_course_ref: true
   field_media_documents_ref: true
   field_module_ref: true
   field_order: true

@@ -1,0 +1,11 @@
+uuid: 85ee3852-a5be-4c9c-80ac-181075fdd1b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - rw_training
+id: rw_enrollment.token
+label: Token
+description: null
+targetEntityType: rw_enrollment
+cache: true

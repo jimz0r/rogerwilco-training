@@ -1,0 +1,25 @@
+{{ attach_library('rw_training/cards') }}
+
+<article class="rw-card">
+  <header class="rw-card__header">
+    <h3 class="rw-card__title">
+      {{ fields.course.content }}
+    </h3>
+
+    {# Grab the rendered number (e.g., "33.33") and normalize it #}
+    {% set pct_text = fields.percent_complete.content|render|striptags|trim %}
+    {% set pct = pct_text|replace({',': '.'}) %}
+    <span class="rw-card__badge">{{ pct }}%</span>
+  </header>
+
+  <p class="rw-card__meta">
+    {{ 'Status'|t }}: {{ fields.status.content }}
+    · {{ 'Enrolled'|t }}: {{ fields.created.content }}
+  </p>
+
+  <progress value="{{ pct }}" max="100"></progress>
+
+  <div class="rw-card__actions">
+    {{ fields.course.content }}
+  </div>
+</article>

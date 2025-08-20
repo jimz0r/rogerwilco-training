@@ -28,6 +28,7 @@
         "drupal/gin": "^5.0",
         "drupal/group": "^3.3",
         "drupal/h5p": "^2.0@alpha",
+        "drupal/pathauto": "^1.13",
         "drupal/views_data_export": "^1.6",
         "drush/drush": "^13.6"
     },

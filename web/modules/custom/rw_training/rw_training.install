@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function rw_training_uninstall() {
+  // Remove any lesson completion entries from key_value.
+  \Drupal::database()->delete('key_value')
+    ->condition('collection', 'rw_training.completions')
+    ->execute();
+}

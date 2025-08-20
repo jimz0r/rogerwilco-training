@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.lesson.body
+    - field.field.node.lesson.field_course_ref
     - field.field.node.lesson.field_media_documents_ref
     - field.field.node.lesson.field_module_ref
     - field.field.node.lesson.field_order
@@ -33,6 +34,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_course_ref:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_media_documents_ref:
     type: media_library_widget
     weight: 123
@@ -42,7 +53,7 @@ content:
     third_party_settings: {  }
   field_module_ref:
     type: entity_reference_autocomplete
-    weight: 121
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS

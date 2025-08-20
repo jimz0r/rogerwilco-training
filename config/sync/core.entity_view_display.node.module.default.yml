@@ -19,7 +19,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 101
+    weight: 10
     region: content
   field_order:
     type: number_integer

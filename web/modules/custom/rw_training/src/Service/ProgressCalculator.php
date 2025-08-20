@@ -15,9 +15,9 @@ use Drupal\node\NodeInterface;
  *   - Module  (bundle: "module")
  *   - Lesson  (bundle: "lesson")
  * - Relationships:
- *   - Lesson → Course, via entity reference field "field_course"
+ *   - Lesson → Course, via entity reference field "field_course_ref"
  *     OR
- *   - Lesson → Module (field "field_module"), and Module → Course (field "field_course")
+ *   - Lesson → Module (field "field_module_ref"), and Module → Course (field "field_course_ref")
  *
  * Storage of lesson completion:
  * - Uses KeyValue store collection "rw_training.completions", keyed by Enrollment ID.
@@ -157,7 +157,7 @@ class ProgressCalculator {
 
     $query = $this->etm->getStorage('node')->getQuery()->accessCheck(TRUE)->condition('status', 1);
 
-    // Prefer direct pattern: lesson.field_course == course.id
+    // Prefer direct pattern: lesson.field_course_ref == course.id
     $has_direct = $this->bundleHasField('lesson', self::FIELD_LESSON_COURSE);
     if ($has_direct) {
       $ids = $query
@@ -226,7 +226,7 @@ class ProgressCalculator {
   /**
    * Recalculate percent, update status/completed timestamp, and save enrollment.
    */
-  private function recalculateAndSaveProgress($enrollment, NodeInterface $course): void {
+  public function recalculateAndSaveProgress($enrollment, NodeInterface $course): void {
     $lessons = $this->getLessonIdsForCourse($course);
     $total = count($lessons);
     $percent = 0.0;
