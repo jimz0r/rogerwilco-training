@@ -8,8 +8,8 @@ _core:
   default_config_hash: BCWhood0xXFQYqxFgL1spXdb9KeIuXH1YvTdjIEedDg
 id: baremetal_secondary_local_tasks
 theme: baremetal
-region: sidebar_first
-weight: 0
+region: content
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

@@ -1,0 +1,15 @@
+uuid: 4f1cc66e-675f-4695-92c7-b969592166b8
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_1200w
+label: responsive_1200w
+effects:
+  7a17b311-ff32-4ec9-993e-ca37866a86ac:
+    uuid: 7a17b311-ff32-4ec9-993e-ca37866a86ac
+    id: image_scale
+    weight: null
+    data:
+      width: 1200
+      height: null
+      upscale: true

@@ -1,0 +1,15 @@
+uuid: b605af5e-6106-480b-93ad-3df0ba431fec
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_4_1_600w
+label: responsive_4_1_600w
+effects:
+  53f0a6f4-49a9-4b53-8cb6-8b3a66a48067:
+    uuid: 53f0a6f4-49a9-4b53-8cb6-8b3a66a48067
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 600
+      height: 150
+      anchor: center-center

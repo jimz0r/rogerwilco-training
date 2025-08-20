@@ -6,6 +6,7 @@ libraries:
   - baremetal/base
   - baremetal/messages
   - core/normalize
+  - baremetal/swiper.featured_courses
 libraries-extend:
   user/drupal.user:
     - baremetal/user

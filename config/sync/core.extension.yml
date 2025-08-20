@@ -5,11 +5,15 @@ module:
   admin_toolbar_tools: 0
   announcements_feed: 0
   automated_cron: 0
+  bg_image_formatter: 0
   big_pipe: 0
+  blazy: 0
   block: 0
   block_content: 0
+  block_field: 0
   breakpoint: 0
   ckeditor5: 0
+  classy_paragraphs: 0
   coffee: 0
   comment: 0
   config: 0
@@ -21,20 +25,28 @@ module:
   devel: 0
   devel_generate: 0
   dynamic_page_cache: 0
+  easy_responsive_images: 0
   editor: 0
+  entity_reference_revisions: 0
   entity_update: 0
   field: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   gin_toolbar: 0
   h5p: 0
   help: 0
   history: 0
   image: 0
+  image_effects: 0
   layout_builder: 0
   layout_discovery: 0
+  layout_paragraphs: 0
   link: 0
+  manage_display: 0
   media: 0
   media_library: 0
   menu_link_content: 0
@@ -43,11 +55,15 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_browser: 0
   path: 0
   path_alias: 0
+  responsive_bg_image_formatter: 0
+  responsive_image: 0
   rw_training: 0
   search: 0
   shortcut: 0
+  swiper_formatter: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -59,6 +75,7 @@ module:
   workflows: 0
   pathauto: 1
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   claro: 0

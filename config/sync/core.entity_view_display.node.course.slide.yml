@@ -1,0 +1,66 @@
+uuid: bfa3572a-6996-4d75-9dc5-42b2b7279b7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slide
+    - field.field.node.course.field_difficulty_ref
+    - field.field.node.course.field_duration
+    - field.field.node.course.field_featured
+    - field.field.node.course.field_media_image_ref
+    - field.field.node.course.field_prerequisites_ref
+    - field.field.node.course.field_summary
+    - field.field.node.course.field_topics_ref
+    - node.type.course
+  module:
+    - layout_builder
+    - manage_display
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.course.slide
+targetEntityType: node
+bundle: course
+mode: slide
+content:
+  field_media_image_ref:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: slide
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      link_to_entity: true
+      tag: h2
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_difficulty_ref: true
+  field_duration: true
+  field_featured: true
+  field_prerequisites_ref: true
+  field_topics_ref: true
+  uid: true

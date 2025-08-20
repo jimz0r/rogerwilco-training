@@ -1,0 +1,11 @@
+uuid: 170373ca-2120-48b5-b122-c7ffd68f96df
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.slide_thumb
+label: 'Slide Thumb'
+description: null
+targetEntityType: media
+cache: true

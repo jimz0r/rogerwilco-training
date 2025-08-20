@@ -1,0 +1,11 @@
+uuid: abb0911f-e72b-4f31-bc7b-90c9a284329d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.slide_thumb
+label: 'Slide Thumb'
+description: null
+targetEntityType: node
+cache: true

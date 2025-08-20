@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: aAEWfWu6adWAbn0SpRuFG_vLVi6iJRa0gSYOKOtnhHw
+show_paragraph_labels: 1
+show_layout_labels: 1
+show_layout_plugin_labels: 1
+paragraph_behaviors_label: Behaviors
+paragraph_behaviors_position: -99
+empty_message: 'No components to add.'
+button_labels:
+  enable_tooltips: false
+  default: 'Add Component'
+  root: 'Add Section'

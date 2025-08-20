@@ -10,7 +10,7 @@ dependencies:
 id: baremetal_lessoncompletetoggle
 theme: baremetal
 region: content
-weight: 0
+weight: 1
 provider: null
 plugin: rw_training_lesson_complete
 settings:

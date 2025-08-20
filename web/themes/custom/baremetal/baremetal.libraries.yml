@@ -1,6 +1,8 @@
 base:
   version: VERSION
   css:
+    base:
+      css/style.css: {}
     component:
       css/components/action-links.css:
         weight: -10
@@ -109,3 +111,10 @@ user:
     component:
       css/components/user.css:
         weight: -10
+
+swiper.featured_courses:
+  js:
+    js/swiper.featured_courses.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

@@ -10,7 +10,7 @@ dependencies:
 id: baremetal_enrollbuttoncourse
 theme: baremetal
 region: content
-weight: -2
+weight: -1
 provider: null
 plugin: rw_training_enroll_button
 settings:

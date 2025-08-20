@@ -1,0 +1,7 @@
+uuid: f89704c0-4a21-4e31-b4d2-5bcc40069edc
+langcode: en
+status: true
+dependencies: {  }
+id: featured_course
+label: 'Featured Course Pair'
+classes: js-featured-course-pair

@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: zsgVcpW2MTCFneflpVjUCzNlWfO-ehafAc9S_TNI8Lk
+threshold_width: '300'
+minimum_width: '300'
+maximum_width: '1800'
+aspect_ratios: "4:1\r\n16:9\r\n4:3\r\n1:1"
+threshold_height: ''
+minimum_height: ''
+maximum_height: ''
+lazy_loading_threshold: '1250'

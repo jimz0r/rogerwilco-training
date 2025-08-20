@@ -57,20 +57,20 @@
 
   {{ page.help }}
 
-  <main role="main">
+  <main role="main" class="layout-with-sidebar">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
+    {% if page.sidebar_first|render|trim is not empty %}
       <aside class="layout-sidebar-first" role="complementary">
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
 
-    {% if page.sidebar_second %}
+    <div class="layout-content layout-center">
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+    {% if page.sidebar_second|render|trim is not empty %}
       <aside class="layout-sidebar-second" role="complementary">
         {{ page.sidebar_second }}
       </aside>

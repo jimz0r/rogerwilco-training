@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_components
     - node.type.page
   module:
+    - layout_paragraphs
     - path
     - text
 _core:
@@ -30,6 +32,18 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_components:
+    type: layout_paragraphs
+    weight: 121
+    region: content
+    settings:
+      view_mode: default
+      preview_view_mode: preview
+      form_display_mode: default
+      nesting_depth: 1
+      require_layouts: 1
+      empty_message: 'Stare building your page.'
     third_party_settings: {  }
   path:
     type: path

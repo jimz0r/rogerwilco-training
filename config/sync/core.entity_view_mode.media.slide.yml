@@ -1,0 +1,11 @@
+uuid: 13d0b09d-4f18-46b0-b4ec-05959ca55f3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.slide
+label: Slide
+description: null
+targetEntityType: media
+cache: true

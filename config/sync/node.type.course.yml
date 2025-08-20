@@ -15,4 +15,4 @@ description: 'Use to create <em>Course</em> content.'
 help: null
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

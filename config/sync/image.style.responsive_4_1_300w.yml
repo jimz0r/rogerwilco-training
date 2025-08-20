@@ -1,0 +1,15 @@
+uuid: 3b1b5ab2-ce48-43b2-b5f7-2487097da648
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_4_1_300w
+label: responsive_4_1_300w
+effects:
+  df791408-8d62-4e46-834a-a676d1b88810:
+    uuid: df791408-8d62-4e46-834a-a676d1b88810
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 300
+      height: 75
+      anchor: center-center

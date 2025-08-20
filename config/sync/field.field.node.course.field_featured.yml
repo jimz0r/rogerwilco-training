@@ -1,0 +1,21 @@
+uuid: b1b62bb7-1a3e-4294-8a5a-e3a7cf4c1e3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.course
+id: node.course.field_featured
+field_name: field_featured
+entity_type: node
+bundle: course
+label: Featured
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

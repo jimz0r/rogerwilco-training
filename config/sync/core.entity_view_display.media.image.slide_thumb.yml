@@ -1,0 +1,42 @@
+uuid: 1ad70a54-5052-413c-8781-d13ac6edb545
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.slide_thumb
+    - field.field.media.image.field_media_image
+    - media.type.image
+  module:
+    - easy_responsive_images
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.slide_thumb
+targetEntityType: media
+bundle: image
+mode: slide_thumb
+content:
+  field_media_image:
+    type: easy_responsive_images
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      image_handling: aspect_ratio
+      aspect_ratio: '16_9'
+      multiplier: 1x
+      cover: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

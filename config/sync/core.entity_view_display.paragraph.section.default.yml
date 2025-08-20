@@ -1,0 +1,14 @@
+uuid: 13d23ba8-9c7f-4bec-b3d7-01a378ef0488
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section.field_classes
+    - paragraphs.paragraphs_type.section
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content: {  }
+hidden:
+  field_classes: true
