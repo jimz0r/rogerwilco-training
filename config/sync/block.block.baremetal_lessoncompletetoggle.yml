@@ -1,0 +1,28 @@
+uuid: 13bdfea9-8d10-4c1c-8827-902a749997cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - rw_training
+  theme:
+    - baremetal
+id: baremetal_lessoncompletetoggle
+theme: baremetal
+region: content
+weight: 0
+provider: null
+plugin: rw_training_lesson_complete
+settings:
+  id: rw_training_lesson_complete
+  label: 'Lesson complete toggle'
+  label_display: visible
+  provider: rw_training
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      lesson: lesson

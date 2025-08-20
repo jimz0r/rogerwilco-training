@@ -1,0 +1,28 @@
+uuid: 0e599130-d4d9-4e4e-91fb-55d955696dee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - rw_training
+  theme:
+    - baremetal
+id: baremetal_courseprogress
+theme: baremetal
+region: content
+weight: 0
+provider: null
+plugin: rw_training_course_progress
+settings:
+  id: rw_training_course_progress
+  label: 'Course progress'
+  label_display: visible
+  provider: rw_training
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      course: course

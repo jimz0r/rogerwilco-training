@@ -1,0 +1,28 @@
+uuid: c4865424-cc25-443d-b6a2-c5fca5cdc863
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - rw_training
+  theme:
+    - baremetal
+id: baremetal_enrollbuttoncourse
+theme: baremetal
+region: content
+weight: -2
+provider: null
+plugin: rw_training_enroll_button
+settings:
+  id: rw_training_enroll_button
+  label: 'Enroll button (Course)'
+  label_display: visible
+  provider: rw_training
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      course: course
