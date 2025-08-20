@@ -4,6 +4,7 @@ rw_training.enroll:
     _controller: '\Drupal\rw_training\Controller\EnrollController::enroll'
   requirements:
     _entity_access: 'node.view'
+    _csrf_token: 'TRUE'
     node: '\d+'
 
 rw_training.unenroll:
@@ -12,6 +13,7 @@ rw_training.unenroll:
     _controller: '\Drupal\rw_training\Controller\EnrollController::unenroll'
   requirements:
     _entity_access: 'node.view'
+    _csrf_token: 'TRUE'
     node: '\d+'
 
 rw_training.lesson_complete:
@@ -20,6 +22,7 @@ rw_training.lesson_complete:
     _controller: '\Drupal\rw_training\Controller\LessonProgressController::complete'
   requirements:
     _entity_access: 'node.view'
+    _csrf_token: 'TRUE'
     node: '\d+'
 
 rw_training.lesson_uncomplete:
@@ -28,6 +31,7 @@ rw_training.lesson_uncomplete:
     _controller: '\Drupal\rw_training\Controller\LessonProgressController::uncomplete'
   requirements:
     _entity_access: 'node.view'
+    _csrf_token: 'TRUE'
     node: '\d+'
 
 rw_training.course_next_lesson:
@@ -45,3 +49,4 @@ rw_training.recalc_all:
     _title: 'Recalculate enrollment progress'
   requirements:
     _permission: 'administer rw training'
+    _csrf_token: 'TRUE'

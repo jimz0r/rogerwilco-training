@@ -4,7 +4,6 @@ namespace Drupal\rw_training\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Messenger\MessengerTrait;
-use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -35,6 +34,17 @@ class LessonProgressController extends ControllerBase {
     $calc = \Drupal::service('rw_training.progress_calculator');
     $calc->completeLesson($account, $node);
 
+    // Invalidate the enrollment-specific cache tag so blocks update immediately.
+    $course = $calc->resolveCourseFromLesson($node);
+    if ($course) {
+      $enrollment = $calc->loadEnrollment($account, $course);
+      if ($enrollment) {
+        \Drupal::service('cache_tags.invalidator')->invalidateTags([
+          'rw_training:enrollment:' . $enrollment->id(),
+        ]);
+      }
+    }
+
     $this->messenger()->addStatus($this->t('Marked this lesson as complete.'));
     return $this->redirect('entity.node.canonical', ['node' => $node->id()]);
   }
@@ -58,6 +68,16 @@ class LessonProgressController extends ControllerBase {
     /** @var \Drupal\rw_training\Service\ProgressCalculator $calc */
     $calc = \Drupal::service('rw_training.progress_calculator');
     $calc->uncompleteLesson($account, $node);
+
+    $course = $calc->resolveCourseFromLesson($node);
+    if ($course) {
+      $enrollment = $calc->loadEnrollment($account, $course);
+      if ($enrollment) {
+        \Drupal::service('cache_tags.invalidator')->invalidateTags([
+          'rw_training:enrollment:' . $enrollment->id(),
+        ]);
+      }
+    }
 
     $this->messenger()->addStatus($this->t('Marked this lesson as not complete.'));
     return $this->redirect('entity.node.canonical', ['node' => $node->id()]);

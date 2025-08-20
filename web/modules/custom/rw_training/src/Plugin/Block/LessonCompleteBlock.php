@@ -53,6 +53,15 @@ class LessonCompleteBlock extends BlockBase implements ContainerFactoryPluginInt
 
     $account = \Drupal::currentUser();
 
+    // Resolve course & enrollment so we can attach a stable cache tag.
+    $course = $this->calculator->resolveCourseFromLesson($node);
+    $enrollment = $course ? $this->calculator->loadEnrollment($account, $course) : NULL;
+
+    $tags = $node->getCacheTags();
+    if ($enrollment) {
+      $tags[] = 'rw_training:enrollment:' . $enrollment->id();
+    }
+
     // Anonymous users: login prompt.
     if ($account->isAnonymous()) {
       $login = Link::createFromRoute(
@@ -71,7 +80,7 @@ class LessonCompleteBlock extends BlockBase implements ContainerFactoryPluginInt
         'login' => $login,
         '#cache' => [
           'contexts' => ['route', 'user'],
-          'tags' => $node->getCacheTags(),
+          'tags' => $tags,
         ],
       ];
     }
@@ -98,7 +107,7 @@ class LessonCompleteBlock extends BlockBase implements ContainerFactoryPluginInt
       'action' => $link,
       '#cache' => [
         'contexts' => ['route', 'user'],
-        'tags' => $node->getCacheTags(),
+        'tags' => $tags,
       ],
     ];
   }
