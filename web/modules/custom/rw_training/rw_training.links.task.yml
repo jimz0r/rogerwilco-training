@@ -1,0 +1,5 @@
+rw_training.enrollments_export_tab:
+  route_name: rw_training.enrollments_export
+  title: 'Export CSV'
+  base_route: entity.rw_enrollment.collection
+  weight: 50

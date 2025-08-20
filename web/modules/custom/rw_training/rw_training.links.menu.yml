@@ -4,3 +4,10 @@ rw_enrollment.collection:
   route_name: entity.rw_enrollment.collection
   parent: system.admin_content
   weight: 25
+
+rw_enrollment.export:
+  title: 'Export enrollments (CSV)'
+  description: 'Download all enrollments as a CSV.'
+  route_name: rw_training.enrollments_export
+  parent: system.admin_content
+  weight: 30

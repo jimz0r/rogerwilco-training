@@ -50,3 +50,11 @@ rw_training.recalc_all:
   requirements:
     _permission: 'administer rw training'
     _csrf_token: 'TRUE'
+
+rw_training.enrollments_export:
+  path: '/admin/content/enrollments/export.csv'
+  defaults:
+    _controller: '\Drupal\rw_training\Controller\AdminExportController::csv'
+    _title: 'Export enrollments CSV'
+  requirements:
+    _permission: 'administer rw training'
