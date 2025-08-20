@@ -52,6 +52,13 @@ class CourseProgressBlock extends BlockBase implements ContainerFactoryPluginInt
 
     $account = \Drupal::currentUser();
 
+    // Build base cache tags and add an enrollment-specific tag if it exists.
+    $tags = $node->getCacheTags();
+    $enrollment = $this->calculator->loadEnrollment($account, $node);
+    if ($enrollment) {
+      $tags[] = 'rw_training:enrollment:' . $enrollment->id();
+    }
+
     // Anonymous users see a login CTA.
     if ($account->isAnonymous()) {
       $login = Link::createFromRoute(
@@ -65,7 +72,7 @@ class CourseProgressBlock extends BlockBase implements ContainerFactoryPluginInt
         '#type' => 'container',
         '#attributes' => ['class' => ['rw-course-progress']],
         'login' => $login,
-        '#cache' => ['contexts' => ['route', 'user'], 'tags' => $node->getCacheTags()],
+        '#cache' => ['contexts' => ['route', 'user'], 'tags' => $tags],
       ];
     }
 
@@ -101,7 +108,7 @@ class CourseProgressBlock extends BlockBase implements ContainerFactoryPluginInt
       'summary' => [
         '#markup' => '<p class="rw-course-progress__summary">' .
           $this->t('@percent% complete (@done of @total lessons)', [
-            '@percent' => number_format($percent, 2),
+            '@percent' => number_format((float) $percent, 2),
             '@done' => $done,
             '@total' => $total,
           ]) .
@@ -109,7 +116,7 @@ class CourseProgressBlock extends BlockBase implements ContainerFactoryPluginInt
       ],
       'bar' => $progress,
       'action' => $primary,
-      '#cache' => ['contexts' => ['route', 'user'], 'tags' => $node->getCacheTags()],
+      '#cache' => ['contexts' => ['route', 'user'], 'tags' => $tags],
     ];
   }
 

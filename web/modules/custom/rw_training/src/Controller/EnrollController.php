@@ -46,6 +46,11 @@ class EnrollController extends ControllerBase {
     ]);
     $enrollment->save();
 
+    // Invalidate cache so CourseProgressBlock updates immediately.
+    \Drupal::service('cache_tags.invalidator')->invalidateTags([
+      'rw_training:enrollment:' . $enrollment->id(),
+    ]);
+
     $this->messenger()->addStatus($this->t('Enrolled successfully.'));
     return $this->redirect('entity.node.canonical', ['node' => $node->id()]);
   }
@@ -64,7 +69,12 @@ class EnrollController extends ControllerBase {
 
     if ($existing) {
       $enrollment = reset($existing);
+      $tag = 'rw_training:enrollment:' . $enrollment->id();
       $enrollment->delete();
+
+      // Invalidate the block cache variant tied to this (now-deleted) enrollment.
+      \Drupal::service('cache_tags.invalidator')->invalidateTags([$tag]);
+
       $this->messenger()->addStatus($this->t('Unenrolled.'));
     }
     else {
